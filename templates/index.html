@@ -2,10 +2,39 @@
 <html>
 <head>
 <title>Title of the document</title>
+<script type="module">
+  import React from 'https://esm.sh';
+  import ReactDOM from 'https://esm.sh';
+
+  // Your React code using import/export statements goes here
+</script>
 </head>
 
 <body>
 The content of the document......desk
+
+<div id="root"></div>
+ <script type="text/babel">
+        // 1. Define a simple functional component
+        function Welcome(props) {
+            return <h1>Hello, {props.name}!</h1>;
+        }
+
+        // 2. Define another component that uses the Welcome component
+        function App() {
+            return (
+                <div>
+                    <Welcome name="User" />
+                    <p>This is a simple React component example using CDN.</p>
+                </div>
+            );
+        }
+
+        // 3. Render the App component to the DOM
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container); // Use createRoot for React 18+
+        root.render(<App />);
+    </script>
 </body>
 
 </html>
