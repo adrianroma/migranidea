@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask_cors import cross_origin
+from flask_cors import CORS,cross_origin
 
 app = Flask(__name__, template_folder="templates")
 
@@ -8,10 +8,10 @@ app = Flask(__name__, template_folder="templates")
 # Posted by imran3
 # Retrieved 2026-02-18, License - CC BY-SA 4.0
 
-
+CORS(app, support_credentials=True)
 
 @app.route("/")
-@cross_origin(origins=["https://unpkg.com", "https://esm.sh"])
+@cross_origin(supports_credentials=True)
 def index():
     return render_template("/index.html")
 
