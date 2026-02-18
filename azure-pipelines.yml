@@ -11,7 +11,7 @@ variables:
   azureServiceConnectionId: '1bc3ebfd-d489-4e75-8600-5afc64756687'
 
   # Web app name
-  webAppName: 'chatidea'
+  webAppName: 'migranidea'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
