@@ -1,28 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>REACT SAMPLE</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React CDN Example</title>
+    <!-- Load React and ReactDOM from unpkg CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com"></script>
+    <!-- Load Babel for JSX transformation in the browser -->
+    <script src="https://unpkg.com"></script>
 </head>
-
 <body>
+    <!-- The DOM element where the React component will be mounted -->
+    <div id="root"></div>
 
-    <div id="react-app"></div>
+    <!-- Your React code goes here -->
+    <!-- Use type="text/babel" to enable Babel compilation -->
+    <script type="text/babel">
+        // 1. Define a simple functional component
+        function Welcome(props) {
+            return <h1>Hello, {props.name}!</h1>;
+        }
 
-    <!-- Import React and ReactDOM using an ESM-based CDN -->
-    <script type="module">
-        import React from 'https://esm.sh';
-        import ReactDOM from 'https://esm.sh';
+        // 2. Define another component that uses the Welcome component
+        function App() {
+            return (
+                <div>
+                    <Welcome name="User" />
+                    <p>This is a simple React component example using CDN.</p>
+                </div>
+            );
+        }
 
-        // Your React code using modern syntax
-        const App = () => {
-            return React.createElement('h1', null, 'Hello from React 19!');
-        };
-
-        const container = document.getElementById('react-app');
-        const root = ReactDOM.createRoot(container);
-        root.render(React.createElement(App));
+        // 3. Render the App component to the DOM
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container); // Use createRoot for React 18+
+        root.render(<App />);
     </script>
 </body>
-
 </html>
