@@ -4,7 +4,7 @@ from flask_cors import cross_origin
 app = Flask(__name__, template_folder="templates")
 
 @app.route("/")
-@cross_origin(origins=["*"])
+@cross_origin()
 def index():
     return render_template("/index.html")
 
