@@ -1,10 +1,10 @@
 from flask import Flask, render_template
-from flask_cors import CORS
+from flask_cors import cross_origin
 
 app = Flask(__name__, template_folder="templates")
-CORS(app)
 
 @app.route("/")
+@cross_origin(origins=["*"])
 def index():
     return render_template("/index.html")
 
