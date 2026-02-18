@@ -8,10 +8,10 @@ app = Flask(__name__, template_folder="templates")
 # Posted by imran3
 # Retrieved 2026-02-18, License - CC BY-SA 4.0
 
-CORS(app, support_credentials=True)
+CORS(app)
 
 @app.route("/")
-@cross_origin(supports_credentials=True)
+@cross_origin()
 def index():
     return render_template("/index.html")
 
